@@ -1,25 +1,73 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  text-align: center;
-  padding: 50px;
+    background: linear-gradient(135deg, #FF99CC, #FFCC99); /* Color gradient */
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    text-align: center;
+    color: #333;
+    padding: 50px 20px;
 }
 
-.container {
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  display: inline-block;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/* Main Heading Styling */
+h1 {
+    font-size: 3rem;
+    color: #4b2c7f;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
 }
 
-#joke {
-  font-size: 1.2em;
-  margin: 20px 0;
+/* Joke Container Styling */
+#jokeContainer {
+    font-size: 1.5rem;
+    color: #4f4f4f;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    padding: 30px 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    transition: transform 0.3s ease-in-out;
+    animation: fadeIn 1s ease-out;
 }
 
-#jokeBtn {
-  padding: 10px 20px;
-  font-size: 1em;
-  cursor: pointer;
+/* Hover Effect for Joke Container */
+#jokeContainer:hover {
+    transform: scale(1.05);
+}
+
+/* Animation for fading in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button Styling (for a next joke button, optional) */
+button {
+    background-color: #4b2c7f;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #6a45a1;
 }

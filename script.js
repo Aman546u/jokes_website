@@ -19,5 +19,5 @@ function fetchHindiJoke() {
         });
 }
 
-// Call the function when the page loads
+// Call the function when the page loads to show an initial joke
 window.onload = fetchHindiJoke;

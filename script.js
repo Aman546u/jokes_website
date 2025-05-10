@@ -1,23 +1,30 @@
-// Function to fetch a Hindi joke from JokeAPI
 function fetchHindiJoke() {
     fetch("https://v2.jokeapi.dev/joke/Any?lang=hi")
         .then(response => response.json())
         .then(data => {
-            let jokeContainer = document.getElementById("jokeContainer");
+            const jokeContainer = document.getElementById("jokeContainer");
 
-            // Check if the joke is a two-part joke
+            // If joke type is two-part
             if (data.type === "twopart") {
-                jokeContainer.innerHTML = `<p><strong>जोक:</strong> ${data.setup} <br> <strong>जवाब:</strong> ${data.delivery}</p>`;
-            } else {
-                // If it's a single joke
+                jokeContainer.innerHTML = `
+                    <p><strong>जोक:</strong> ${data.setup}</p>
+                    <p><strong>जवाब:</strong> ${data.delivery}</p>
+                `;
+            } 
+            // If joke is a single part
+            else if (data.type === "single") {
                 jokeContainer.innerHTML = `<p>${data.joke}</p>`;
+            } 
+            // If the API doesn't return a joke
+            else {
+                jokeContainer.innerHTML = "<p>अज्ञात जोक प्रकार।</p>";
             }
         })
         .catch(error => {
             console.error("Error fetching joke:", error);
-            document.getElementById("jokeContainer").innerHTML = "<p>अभी कोई जोक नहीं मिला। कृपया पुनः प्रयास करें।</p>";
+            document.getElementById("jokeContainer").innerHTML = "<p>नेटवर्क त्रुटि।</p>";
         });
 }
 
-// Call the function when the page loads to show an initial joke
+// Call the function to fetch the joke when the page loads
 window.onload = fetchHindiJoke;

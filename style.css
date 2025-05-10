@@ -1,73 +1,51 @@
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body Styling */
 body {
-    background: linear-gradient(135deg, #FF99CC, #FFCC99); /* Color gradient */
-    font-family: 'Noto Sans Devanagari', sans-serif;
+    background: linear-gradient(to right, #ffecd2, #fcb69f);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     text-align: center;
-    color: #333;
-    padding: 50px 20px;
+    max-width: 500px;
+    animation: fadeIn 1s ease-in;
 }
 
-/* Main Heading Styling */
 h1 {
-    font-size: 3rem;
-    color: #4b2c7f;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    font-weight: 600;
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
-/* Joke Container Styling */
 #jokeContainer {
-    font-size: 1.5rem;
-    color: #4f4f4f;
-    background-color: rgba(255, 255, 255, 0.85);
-    border-radius: 12px;
-    padding: 30px 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    width: 80%;
-    max-width: 600px;
-    margin: 0 auto;
-    transition: transform 0.3s ease-in-out;
-    animation: fadeIn 1s ease-out;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #333;
+    transition: all 0.3s ease;
 }
 
-/* Hover Effect for Joke Container */
-#jokeContainer:hover {
-    transform: scale(1.05);
-}
-
-/* Animation for fading in */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Button Styling (for a next joke button, optional) */
 button {
-    background-color: #4b2c7f;
+    background: #ff6f61;
     color: white;
-    font-size: 1.2rem;
+    padding: 10px 25px;
     border: none;
-    padding: 12px 30px;
-    border-radius: 50px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 20px;
+    font-size: 1em;
+    transition: background 0.3s;
 }
 
 button:hover {
-    background-color: #6a45a1;
+    background: #e65c50;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
